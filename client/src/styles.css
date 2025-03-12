@@ -47,12 +47,11 @@
  /* APP */
 
  body {
-
+   background-color: #07000d;
+   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
    color: white;
    font-family: 'Rubik', sans-serif;
  }
-
-
 
  /* container */
 
@@ -149,23 +148,5 @@
 
   &:hover {
     background-color: rgba(95, 0, 179, 0.5) ;
-  }
- }
-
- 
-/* put at the bottom of your styles.css file */
-
-@media (max-width: 420px) {
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .form {
-    width: 95%;
-  }
-
-  .todo {
-    width: 95%;
-    font-size: 1.2rem;
   }
  }
