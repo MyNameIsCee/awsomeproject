@@ -34,7 +34,7 @@ export default function App() {
             className="form__input"
             required 
           />
-          <button type="submit">Create Todo</button>
+         <button type="submit" className="form__button">Create Todo</button>
         </form>
         <div className="todos">
         {(todos.length > 0) &&
