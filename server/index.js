@@ -17,9 +17,15 @@ app.use("/api", router);
 const port = process.env.PORT || 5000;
 
 const startServer = async () => {
-    await connectToMongoDB();
-    app.listen(port, () => {
-        console.log(`Server is listening on http://localhost:${port}`);
-    });
+    try {
+        await connectToMongoDB();
+        app.listen(port, () => {
+            console.log(`Server is listening on http://localhost:${port}`);
+        });
+    } catch (error) {
+        console.error("Failed to start server:", error);
+        process.exit(1);
+    }
 };
+
 startServer();
