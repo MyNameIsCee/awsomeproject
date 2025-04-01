@@ -6,13 +6,16 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'build')));
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'build/index.html'));
-});
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 const router = require("./routes");
 app.use("/api", router);
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 
 const port = process.env.PORT || 5000;
 
